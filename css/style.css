@@ -192,6 +192,9 @@ nav ul .sinUp:hover {
     border-radius: 5px;
     text-align: center;
 }
+.searchForm input[type="button"]:hover {
+    opacity: .8;
+}
 
 
 /* *********************form************************* */
