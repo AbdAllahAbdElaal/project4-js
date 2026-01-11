@@ -396,6 +396,9 @@ nav ul .sinUp:hover {
         .header-content {
             height: 150px;
         }
+        .products {
+            width: 90%;
+        }
         .products .product-order .product-order-details .product-order-action .remove_from_cart {
             width: 140px;
         }
