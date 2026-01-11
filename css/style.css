@@ -406,6 +406,9 @@ nav ul .sinUp:hover {
         .products .product-order .product-order-details .product-order-action .remove_from_cart {
             width: 140px;
         }
+        .searchForm input[type="button"] {
+            text-align: start;
+        }
     }
 
 
