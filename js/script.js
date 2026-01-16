@@ -304,14 +304,30 @@ function addToLove(id, btn) {
 
 let cartProduct = document.querySelector(".cart_product")
 let cartIcon = document.querySelector(".cart-icon")
-cartIcon.addEventListener("click" , listStatus)
+// cartIcon.addEventListener("click" , listStatus)
 
 if(!localStorage.getItem("email")){
     cartIcon.style.display = "none"
 }
 
+// نقوم بإضافة مستمع للنقر مرة واحدة فقط
+cartIcon.addEventListener("click", function() {
+    
+    // عند النقر، نسأل: هل الشاشة الآن صغيرة؟
+    if (window.matchMedia('(max-width: 656px)').matches) {
+        
+        // إذا كانت صغيرة: اذهب لصفحة السلة
+        window.location = "cartProducts.html";
+        
+    } else {
+        
+        // إذا كانت كبيرة: افتح القائمة الجانبية
+        listStatus();
+    }
+});
+
 function listStatus() {
-    if (cartProduct.style.display == "none") {
+    if (cartProduct.style.display == "none" || cartProduct.style.display == "") {
         cartProduct.style.display = "block"
     }else {
         cartProduct.style.display = "none"

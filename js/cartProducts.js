@@ -127,10 +127,20 @@ function removeFromCart(id){
 
 let cartProduct = document.querySelector(".cart_product")
 let cartIcon = document.querySelector(".cart-icon")
-cartIcon.addEventListener("click" , listStatus)
+// cartIcon.addEventListener("click" , listStatus)
+
+// نقوم بإضافة مستمع للنقر مرة واحدة فقط
+cartIcon.addEventListener("click", function() {
+    // عند النقر، نسأل: هل الشاشة الآن صغيرة؟
+    if (window.matchMedia('(max-width: 656px)').matches) {
+        
+    } else {
+        listStatus();
+    }
+});
 
 function listStatus() {
-    if (cartProduct.style.display == "none") {
+    if (cartProduct.style.display == "none" || cartProduct.style.display == "") {
         cartProduct.style.display = "block"
     }else {
         cartProduct.style.display = "none"
